@@ -4,9 +4,8 @@ import Login from "./components/Login"
 
 function App() {
   return (
-    <div className="App h-100">
-      Hello
-      
+    <div style={{display: 'flex',  justifyContent:'center',alignItems:'center'}}>
+            
       <Login />
     </div>
   );
