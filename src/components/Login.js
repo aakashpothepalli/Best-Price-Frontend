@@ -27,38 +27,17 @@ function Login () {
         
     }
 
-    const styles = {
-        parent:{
-            justifyContent:'center',
-            display:'flex',
-            textAlign:'center',
-            alignItems:'center',
-            alignContent:'center',
-            width:'80%',
-            maxWidth:410,
-           
-            // paddingLeft:'25%',
-            // paddingRight:'25%',
-            // paddingTop:'15%'
-        },
-        textbox:{
-            width:'80%'
-        }
-       
-    }
-
+    
     return (
-        <div className=" card" style={styles.parent} >
-
-
-                <div >
-                    <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" onChange={event=>{setEmail(event.target.value)}}/>
+        <div className=" card" style={{width:410}}>
+                <div  className="card-body">
+                    <label >Email address</label>
+                    <input type="email" className="form-control" id="email" aria-describedby="emailHelp" onChange={event=>{setEmail(event.target.value)}}/>
                 </div>
 
-                <div >
+                <div className="card-body">
                     <label>Pass</label>
-                    <input type="password" class="form-control textbox" id="pass" aria-describedby="emailHelp" onChange={event=>{setPass(event.target.value)}}/>
+                    <input type="password" className="form-control" id="pass" aria-describedby="emailHelp" onChange={event=>{setPass(event.target.value)}}/>
                 </div>
                 
                 <button onClick={submit} className="btn btn-primary mt-5" >click</button>
