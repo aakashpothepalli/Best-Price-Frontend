@@ -1,37 +1,15 @@
 import React,{useEffect,useState} from 'react';
 import './App.css';
-import Login from "./components/Login"
-import {useCookies,Cookies} from "react-cookie"
+import Navbar from "./components/Navbar"
+import Home from "./components/Home"
 function App() {
 
-    const [cookies, setCookie] = useCookies(['id']);
-
-    const signout =()=>{
-      setCookie('id',null,{path:'/'})
-      window.location.reload()
-    }
-    
-     if(!cookies.id ||cookies.id==='null' ){
-        return(
-          <div style={{display: 'flex',  justifyContent:'center',alignItems:'center'}}>
-                  
-            <Login />
-          </div>
-        )
-     }
-    else{
-        return(
-          <div>
-          Logged in
-
-          <button className="btn btn-primary" onClick={signout}>sign out</button>
-
-            </div>
-        )
-     
-    }
-  
-
+   return (
+     <div>
+       <Navbar/>
+       <Home/>
+     </div>
+   )
 }
 
 export default App;
