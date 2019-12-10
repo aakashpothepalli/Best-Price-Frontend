@@ -8,11 +8,9 @@ function App() {
 
       <ul className="navbar-nav ml-auto">
         <li className="nav-item active">   
-            <a class="nav-link" href="/login">Login</a>
+            <a class="nav-link" href="/login">Login / Signup</a>
         </li>
-        <li className="nav-item active ">   
-            <a class="nav-link" href="/signup">Signup</a>
-        </li>
+      
       </ul>
       
     </div>

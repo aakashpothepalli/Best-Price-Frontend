@@ -1,7 +1,6 @@
 import React,{useState} from 'react';
 import firebase from "../firebase"
 import {useCookies} from "react-cookie"
-import Navbar from "./Navbar"
 
 function Login () {
     const [email,setEmail]  =useState('')
@@ -31,8 +30,7 @@ function Login () {
     
     return (
         <div>
-             <Navbar/>
-        <div className=" card" style={{width:410}}>
+        <div className=" card" style={{width:410,margin:30}}>
                 <div  className="card-body">
                     <label >Email address</label>
                     <input type="email" className="form-control" id="email" aria-describedby="emailHelp" onChange={event=>{setEmail(event.target.value)}}/>

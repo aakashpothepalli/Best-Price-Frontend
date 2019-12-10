@@ -18,8 +18,7 @@ function Login () {
     
     return (
         <div>
-        <Navbar/>
-        <div className=" card" style={{width:410}}>
+        <div className=" card" style={{width:410,margin:30}}>
                 <div  className="card-body">
                     <label >Name</label>
                     <input type="name" className="form-control" id="name" aria-describedby="emailHelp" onChange={event=>{setName(event.target.value)}}/>
