@@ -1,5 +1,4 @@
 import React,{useEffect,useState} from 'react';
-import Login from "./components/Login"
 import {useCookies,Cookies} from "react-cookie"
 import Navbar from "./components/Navbar"
 function Home() {
@@ -8,15 +7,18 @@ function Home() {
 
     const signout =()=>{
       setCookie('id',null,{path:'/'})
-      window.location.reload()
+      window.open('/','_self')
     }
     
      if(!cookies.id ||cookies.id==='null' ){
         return(
-          <div style={{display: 'flex', justifyContent:'center',alignItems:'center'}}>      
-             <Navbar/>
-            <Login />
-          </div>
+          <div>
+            <div style={{display: 'flex', justifyContent:'center',alignItems:'center'}}>      
+              <Navbar/>
+            
+            </div>
+            not logged in
+          </div>  
         )
      }
     else{

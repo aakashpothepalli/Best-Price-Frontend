@@ -1,13 +1,14 @@
-import React,{useEffect,useState} from 'react';
-import './App.css';
+import {useRoutes} from 'hookrouter';
+import React from "react"
 import Home from "./Home"
+import Signup from "./components/Signup"
+import Login from "./components/Login"
 function App() {
-
-   return (
-     <div>
-       <Home/>
-     </div>
-   )
+  const routeResult = useRoutes({
+    "/": () => <Home />,
+  "/login": () => <Login />,
+  "/signup": () => <Signup />})
+  return routeResult
 }
 
-export default App;
+export default App

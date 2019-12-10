@@ -21,7 +21,7 @@ function Login () {
             for(let el in data){
                 if(data[el].email ==email && data[el].pass==pass){
                     setCookie('id',el,{path:'/'})
-                    window.location.reload()
+                    window.open('/','_self')
                 }
             }
         })

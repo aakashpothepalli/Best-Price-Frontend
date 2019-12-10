@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import firebase from "../firebase"
-
+import Navbar from "./Navbar"
 function Login () {
     const [name,setName]  =useState('')
     const [email,setEmail]  =useState('')
@@ -17,6 +17,8 @@ function Login () {
 
     
     return (
+        <div>
+        <Navbar/>
         <div className=" card" style={{width:410}}>
                 <div  className="card-body">
                     <label >Name</label>
@@ -36,6 +38,7 @@ function Login () {
                 <button onClick={submit} className="btn btn-primary mt-5" >click</button>
 
             
+        </div>
         </div>
     );
 };

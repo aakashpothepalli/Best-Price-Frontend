@@ -2,15 +2,19 @@ import React from 'react';
 
 function App() {
   return (
-    <div className="navbar bg-light" >
+    <div className="navbar navbar-expand bg-light w-100" >
      
-    <div className="navbar-brand">ECommerce</div>
-    <ul className="navbar-nav">
-      <li className="nav-item active">   
-           <a class="nav-link" href="/login">Login</a>
-      </li>
+    <a href="/" className ="navbar-brand ">ECommerce</a>
 
-    </ul>
+      <ul className="navbar-nav ml-auto">
+        <li className="nav-item active">   
+            <a class="nav-link" href="/login">Login</a>
+        </li>
+        <li className="nav-item active ">   
+            <a class="nav-link" href="/signup">Signup</a>
+        </li>
+      </ul>
+      
     </div>
   );
 }
