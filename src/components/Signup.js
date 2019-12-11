@@ -18,25 +18,31 @@ function Login () {
     
     return (
         <div>
-        <div className=" card" style={{width:410,margin:30}}>
-                <div  className="card-body">
-                    <label >Name</label>
-                    <input type="name" className="form-control" id="name" aria-describedby="emailHelp" onChange={event=>{setName(event.target.value)}}/>
-                </div>
+        <Navbar/>
+        <div className="display-4 flex text-center">Login to your account</div>
+        
+        <div style={{display:'flex',justifyContent:'center',alignItems:'center'}} className="container">
 
-                <div  className="card-body">
-                    <label >Email address</label>
-                    <input type="email" className="form-control" id="email" aria-describedby="emailHelp" onChange={event=>{setEmail(event.target.value)}}/>
-                </div>
+            <div className=" card" style={{width:410,margin:30}}>
+                    <div  className="card-body">
+                        <label >Name</label>
+                        <input type="name" className="form-control" id="name" aria-describedby="emailHelp" onChange={event=>{setName(event.target.value)}}/>
+                    </div>
 
-                <div className="card-body">
-                    <label>Pass</label>
-                    <input type="password" className="form-control" id="pass" aria-describedby="emailHelp"  onChange={event=>{setPass(event.target.value)}}/>
-                </div>
+                    <div  className="card-body">
+                        <label >Email address</label>
+                        <input type="email" className="form-control" id="email" aria-describedby="emailHelp" onChange={event=>{setEmail(event.target.value)}}/>
+                    </div>
+
+                    <div className="card-body">
+                        <label>Pass</label>
+                        <input type="password" className="form-control" id="pass" aria-describedby="emailHelp"  onChange={event=>{setPass(event.target.value)}}/>
+                    </div>
+                    
+                    <button onClick={submit} className="btn btn-primary mt-5" >click</button>
+
                 
-                <button onClick={submit} className="btn btn-primary mt-5" >click</button>
-
-            
+            </div>
         </div>
         </div>
     );
