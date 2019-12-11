@@ -12,7 +12,7 @@ function Login () {
         const loginInfo = {'name':name,'email':email,'pass':pass}
         
         pref.set(loginInfo).then(e=>console.log(e))
-        
+        window.open('/','_self')
     }
 
     
