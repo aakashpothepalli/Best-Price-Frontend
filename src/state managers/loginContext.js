@@ -6,6 +6,7 @@ export const LoginContext = createContext()
 export const LoginInfoProvider = (props)=>{
     const [loginInfo,setLoginInfo] = useState({
         isLoggedIn:false,
+        name:null,
 
     })
     return(
