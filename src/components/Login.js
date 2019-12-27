@@ -1,47 +1,48 @@
 import React,{useState} from 'react';
 import firebase from "../firebase"
-
+import {useCookies} from "react-cookie"
+import Navbar from "./Navbar"
+import Axios from 'axios'
 function Login () {
     const [email,setEmail]  =useState('')
     const [pass,setPass] = useState('')
+    const [cookies, setCookie] = useCookies(['id']);
+
     const submit=()=>{
-        alert('form su')
-        const pref=  firebase.database().ref('users').push()    
-        const loginInfo = {'email':email,'pass':pass}
-        
-        pref.set(loginInfo)
-        firebase.database().ref('users').once('value').then(dataSnap=>console.log(dataSnap.val()))
-    }
-    const styles = {
-        parent:{
-            justifyContent:'center',
-            textAlign:'center',
-            paddingLeft:'25%',
-            paddingRight:'25%',
-            paddingTop:'15%'
-        },
        
+        Axios.get(`http://localhost:8080/auth`,{
+            params:{
+                email:email,
+                pass:pass
+            }
+        }).then(res=>console.log(res.data))
+        
     }
 
+    
     return (
-        <div className="" style={styles.parent} >
+        <div >
+        <Navbar/>
+        <div className="display-4 flex text-center">Login to your account</div>
+        <div style={{display:'flex',justifyContent:'center',alignItems:'center'}} className="container">
+            <div className=" card" style={{width:410,marginTop:30}}>
+                    <div  className="card-body">
+                        <label >Email address</label>
+                        <input type="email" className="form-control" id="email" aria-describedby="emailHelp" onChange={event=>{setEmail(event.target.value)}}/>
+                    </div>
 
-            <form onSubmit={submit}>
+                    <div className="card-body">
+                        <label>Pass</label>
+                        <input type="password" className="form-control" id="pass" aria-describedby="emailHelp" onChange={event=>{setPass(event.target.value)}}/>
+                    </div>
+                    
+                    <button onClick={submit} className="btn btn-primary mt-5" >click</button>
 
-                <div className="form-group">
-                    <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" onChange={event=>{setEmail(event.target.value)}}/>
-                </div>
-
-                <div className="form-group">
-                    <label for="pass">Pass</label>
-                    <input type="password" class="form-control" id="pass" aria-describedby="emailHelp" onChange={event=>{setPass(event.target.value)}}/>
-                </div>
                 
-                <button type = "submit" className="btn btn-primary mt-5" >click</button>
-
-            </form>
+            </div>
         </div>
+        </div>
+
     );
 };
 
