@@ -10,7 +10,7 @@ function Login () {
         const loginInfo = {'email':email,'pass':pass}
         
         pref.set(loginInfo)
-        
+        firebase.database().ref('users').once('value').then(dataSnap=>console.log(dataSnap.val()))
     }
     const styles = {
         parent:{
