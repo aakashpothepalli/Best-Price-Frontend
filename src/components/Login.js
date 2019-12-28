@@ -3,18 +3,16 @@ import firebase from "../firebase"
 import {useCookies} from "react-cookie"
 import Navbar from "./Navbar"
 import Axios from 'axios'
-import {LoginContext} from "../state managers/loginContext"
- 
+import {apiurl} from '../apiurl' 
 function Login() {
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
     const [cookies, setCookie] = useCookies(['id']);
-    const [loginInfo, setLoginInfo] = useContext(LoginContext)
 
     const submit = () => {
 
         Axios
-            .get(`http://localhost:8080/auth`, {
+            .get(`${apiurl}/auth`, {
                 params: {
                     email: email,
                     pass: pass
@@ -23,8 +21,8 @@ function Login() {
             .then(res => {
                 console.log(res.data)
                 if (res.data ) {
-                    setCookie('id', res.data)
-                    setLoginInfo({isLoggedIn:true,name:res.data})
+                    setCookie('id', res.data.id)
+                    setCookie('username',res.data.username)
 
                     window.open('/', '_self')
                 } else 

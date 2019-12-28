@@ -1,0 +1,210 @@
+[debug] [2019-12-28T06:30:21.505Z] ----------------------------------------------------------------------
+[debug] [2019-12-28T06:30:21.506Z] Command:       /usr/local/bin/node /usr/local/bin/firebase emulators:start
+[debug] [2019-12-28T06:30:21.507Z] CLI Version:   7.11.0
+[debug] [2019-12-28T06:30:21.507Z] Platform:      linux
+[debug] [2019-12-28T06:30:21.507Z] Node Version:  v13.5.0
+[debug] [2019-12-28T06:30:21.507Z] Time:          Sat Dec 28 2019 12:00:21 GMT+0530 (India Standard Time)
+[debug] [2019-12-28T06:30:21.507Z] ----------------------------------------------------------------------
+[debug] [2019-12-28T06:30:21.507Z] 
+[debug] [2019-12-28T06:30:21.510Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-12-28T06:30:21.511Z] > authorizing via signed-in user
+[info] i  emulators: Starting emulators: functions, database, hosting
+[warn] ⚠  Your requested "node" version "8" doesn't match your global version "13"
+[info] ✔  functions: Emulator started at http://localhost:5001
+[debug] [2019-12-28T06:30:21.809Z] Ignoring unsupported arg: projectId
+[debug] [2019-12-28T06:30:21.810Z] Ignoring unsupported arg: auto_download
+[debug] [2019-12-28T06:30:21.810Z] Ignoring unsupported arg: rules
+[debug] [2019-12-28T06:30:21.810Z] Starting emulator database with command {"binary":"java","args":["-Duser.language=en","-jar","/home/aakash/.cache/firebase/emulators/firebase-database-emulator-v4.2.0.jar","--host","localhost","--port",9000,"--functions_emulator_host","localhost","--functions_emulator_port",5001],"optionalArgs":["port","host","functions_emulator_port","functions_emulator_host"],"joinArgs":false}
+[info] i  database: Emulator logging to database-debug.log
+[debug] [2019-12-28T06:30:22.732Z] 12:00:22.730 [NamespaceSystem-akka.actor.default-dispatcher-3] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+
+[debug] [2019-12-28T06:30:22.834Z] 12:00:22.834 [main] INFO com.firebase.server.forge.App$ - Listening at localhost:9000
+
+[info] ✔  database: Emulator started at http://localhost:9000
+[info] i  database: For testing set FIREBASE_DATABASE_EMULATOR_HOST=localhost:9000
+[debug] [2019-12-28T06:30:23.097Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/ecommerce-f9321/webApps/-/config  
+ 
+[debug] [2019-12-28T06:30:24.159Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: build
+[info] ✔  hosting: Local server: http://localhost:5000
+[info] ✔  hosting: Emulator started at http://localhost:5000
+[info] i  functions: Watching "/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions" for Cloud Functions...
+[debug] [2019-12-28T06:30:24.442Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2019-12-28T06:30:24.443Z] [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2019-12-28T06:30:24.443Z] [worker-pool] submitWork(triggerId=)
+[debug] [2019-12-28T06:30:24.443Z] [worker-~diagnostic~-1a4f6565-997d-44b3-9455-69c22a1716de]: Assigning socketPath: /tmp/fire_emu_23165.sock
+[debug] [2019-12-28T06:30:24.444Z] [worker-~diagnostic~-1a4f6565-997d-44b3-9455-69c22a1716de]: BUSY
+[debug] [2019-12-28T06:30:24.577Z] [runtime-status] [23165] Functions runtime initialized. {"cwd":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions","node_version":"13.5.0"}
+[debug] [2019-12-28T06:30:24.578Z] [runtime-status] [23165] Disabled runtime features: undefined
+[debug] [2019-12-28T06:30:24.579Z] [runtime-status] [23165] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.0","resolution":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-12-28T06:30:24.580Z] [runtime-status] [23165] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-12-28T06:30:24.682Z] [runtime-status] [23165] Found google-gax at /home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/google-gax/build/src/index.js
+[debug] [2019-12-28T06:30:24.682Z] [runtime-status] [23165] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-28T06:30:24.704Z] [runtime-status] [23165] Checked functions.config() {"config":{}}
+[debug] [2019-12-28T06:30:24.705Z] [runtime-status] [23165] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-12-28T06:30:24.706Z] [runtime-status] [23165] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.0","resolution":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-12-28T06:30:24.706Z] [runtime-status] [23165] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-12-28T06:30:24.728Z] [runtime-status] [23165] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.9.0","resolution":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/firebase-admin/lib/index.js"}}
+[debug] [2019-12-28T06:30:24.729Z] [runtime-status] [23165] initializeApp(DEFAULT) {"databaseURL":"https://ecommerce-f9321.firebaseio.com","storageBucket":"ecommerce-f9321.appspot.com","projectId":"ecommerce-f9321"}
+[warn] ⚠  TypeError: instance.registerVersion is not a function
+    at registerDatabase (/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/@firebase/database/dist/index.node.cjs.js:15188:14)
+    at Object.<anonymous> (/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/@firebase/database/dist/index.node.cjs.js:15200:5)
+    at Module._compile (internal/modules/cjs/loader.js:1139:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1159:10)
+    at Module.load (internal/modules/cjs/loader.js:988:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:896:14)
+    at Module.require (internal/modules/cjs/loader.js:1028:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at FirebaseNamespace.get [as database] (/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/firebase-admin/lib/firebase-namespace.js:282:38)
+    at makeProxiedDatabase (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:401:31)
+[warn] ⚠  We were unable to load your functions code. (see above)
+[debug] [2019-12-28T06:30:24.774Z] [worker-~diagnostic~-1a4f6565-997d-44b3-9455-69c22a1716de]: exited
+[debug] [2019-12-28T06:30:24.775Z] [worker-~diagnostic~-1a4f6565-997d-44b3-9455-69c22a1716de]: FINISHED
+[debug] [2019-12-28T06:32:00.591Z] ----------------------------------------------------------------------
+[debug] [2019-12-28T06:32:00.592Z] Command:       /usr/local/bin/node /usr/local/bin/firebase emulators:start
+[debug] [2019-12-28T06:32:00.592Z] CLI Version:   7.11.0
+[debug] [2019-12-28T06:32:00.592Z] Platform:      linux
+[debug] [2019-12-28T06:32:00.592Z] Node Version:  v13.5.0
+[debug] [2019-12-28T06:32:00.593Z] Time:          Sat Dec 28 2019 12:02:00 GMT+0530 (India Standard Time)
+[debug] [2019-12-28T06:32:00.593Z] ----------------------------------------------------------------------
+[debug] [2019-12-28T06:32:00.593Z] 
+[debug] [2019-12-28T06:32:00.596Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-12-28T06:32:00.596Z] > authorizing via signed-in user
+[info] i  emulators: Starting emulators: functions, database, hosting
+[warn] ⚠  Your requested "node" version "8" doesn't match your global version "13"
+[info] ✔  functions: Emulator started at http://localhost:5001
+[debug] [2019-12-28T06:32:00.895Z] Ignoring unsupported arg: projectId
+[debug] [2019-12-28T06:32:00.896Z] Ignoring unsupported arg: auto_download
+[debug] [2019-12-28T06:32:00.896Z] Ignoring unsupported arg: rules
+[debug] [2019-12-28T06:32:00.896Z] Starting emulator database with command {"binary":"java","args":["-Duser.language=en","-jar","/home/aakash/.cache/firebase/emulators/firebase-database-emulator-v4.2.0.jar","--host","localhost","--port",9000,"--functions_emulator_host","localhost","--functions_emulator_port",5001],"optionalArgs":["port","host","functions_emulator_port","functions_emulator_host"],"joinArgs":false}
+[info] i  database: Emulator logging to database-debug.log
+[debug] [2019-12-28T06:32:01.775Z] 12:02:01.774 [NamespaceSystem-akka.actor.default-dispatcher-3] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+
+[debug] [2019-12-28T06:32:01.881Z] 12:02:01.881 [main] INFO com.firebase.server.forge.App$ - Listening at localhost:9000
+
+[info] ✔  database: Emulator started at http://localhost:9000
+[info] i  database: For testing set FIREBASE_DATABASE_EMULATOR_HOST=localhost:9000
+[debug] [2019-12-28T06:32:01.924Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/ecommerce-f9321/webApps/-/config  
+ 
+[debug] [2019-12-28T06:32:02.863Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: build
+[info] ✔  hosting: Local server: http://localhost:5000
+[info] ✔  hosting: Emulator started at http://localhost:5000
+[info] i  functions: Watching "/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions" for Cloud Functions...
+[debug] [2019-12-28T06:32:03.173Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2019-12-28T06:32:03.174Z] [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2019-12-28T06:32:03.174Z] [worker-pool] submitWork(triggerId=)
+[debug] [2019-12-28T06:32:03.175Z] [worker-~diagnostic~-34c69af0-90ef-49ef-894e-165e51f6d9bb]: Assigning socketPath: /tmp/fire_emu_23492.sock
+[debug] [2019-12-28T06:32:03.175Z] [worker-~diagnostic~-34c69af0-90ef-49ef-894e-165e51f6d9bb]: BUSY
+[debug] [2019-12-28T06:32:03.322Z] [runtime-status] [23492] Functions runtime initialized. {"cwd":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions","node_version":"13.5.0"}
+[debug] [2019-12-28T06:32:03.323Z] [runtime-status] [23492] Disabled runtime features: undefined
+[debug] [2019-12-28T06:32:03.324Z] [runtime-status] [23492] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.0","resolution":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-12-28T06:32:03.325Z] [runtime-status] [23492] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-12-28T06:32:03.428Z] [runtime-status] [23492] Found google-gax at /home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/google-gax/build/src/index.js
+[debug] [2019-12-28T06:32:03.428Z] [runtime-status] [23492] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-28T06:32:03.449Z] [runtime-status] [23492] Checked functions.config() {"config":{}}
+[debug] [2019-12-28T06:32:03.451Z] [runtime-status] [23492] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-12-28T06:32:03.451Z] [runtime-status] [23492] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.0","resolution":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-12-28T06:32:03.452Z] [runtime-status] [23492] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-12-28T06:32:03.475Z] [runtime-status] [23492] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.9.0","resolution":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/firebase-admin/lib/index.js"}}
+[debug] [2019-12-28T06:32:03.476Z] [runtime-status] [23492] initializeApp(DEFAULT) {"databaseURL":"https://ecommerce-f9321.firebaseio.com","storageBucket":"ecommerce-f9321.appspot.com","projectId":"ecommerce-f9321"}
+[info] ✔  functions[app]: http function initialized (http://localhost:5001/ecommerce-f9321/us-central1/app).
+[info] ✔  All emulators started, it is now safe to connect.
+[debug] [2019-12-28T06:32:03.548Z] [worker-~diagnostic~-34c69af0-90ef-49ef-894e-165e51f6d9bb]: IDLE
+[info] >  working on 8080
+[info] >  Error: Reference.child failed: First argument was an invalid path = "undefined". Paths must be non-empty strings and can't contain ".", "#", "$", "[", or "]"
+[info] >      at validatePathString (/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/@firebase/database/dist/index.node.cjs.js:1628:15)
+[info] >      at Reference.child (/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/@firebase/database/dist/index.node.cjs.js:13698:17)
+[info] >      at /home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/index.js:54:26
+[info] >      at Layer.handle [as handle_request] (/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/express/lib/router/layer.js:95:5)
+[info] >      at next (/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/express/lib/router/route.js:137:13)
+[info] >      at Route.dispatch (/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/express/lib/router/route.js:112:3)
+[info] >      at Layer.handle [as handle_request] (/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/express/lib/router/layer.js:95:5)
+[info] >      at /home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/express/lib/router/index.js:281:22
+[info] >      at Function.process_params (/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/express/lib/router/index.js:335:12)
+[info] >      at next (/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/express/lib/router/index.js:275:10)
+[info] >  Error: Reference.child failed: First argument was an invalid path = "undefined". Paths must be non-empty strings and can't contain ".", "#", "$", "[", or "]"
+[info] >      at validatePathString (/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/@firebase/database/dist/index.node.cjs.js:1628:15)
+[info] >      at Reference.child (/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/@firebase/database/dist/index.node.cjs.js:13698:17)
+[info] >      at /home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/index.js:54:26
+[info] >      at Layer.handle [as handle_request] (/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/express/lib/router/layer.js:95:5)
+[info] >      at next (/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/express/lib/router/route.js:137:13)
+[info] >      at Route.dispatch (/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/express/lib/router/route.js:112:3)
+[info] >      at Layer.handle [as handle_request] (/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/express/lib/router/layer.js:95:5)
+[info] >      at /home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/express/lib/router/index.js:281:22
+[info] >      at Function.process_params (/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/express/lib/router/index.js:335:12)
+[info] >      at next (/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/express/lib/router/index.js:275:10)
+[debug] [2019-12-28T06:33:53.846Z] File /home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/index.js changed, reloading triggers
+[debug] [2019-12-28T06:33:54.847Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2019-12-28T06:33:54.847Z] [worker-~diagnostic~-34c69af0-90ef-49ef-894e-165e51f6d9bb]: FINISHING
+[debug] [2019-12-28T06:33:54.858Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2019-12-28T06:33:54.859Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2019-12-28T06:33:54.859Z] [worker-pool] submitWork(triggerId=)
+[debug] [2019-12-28T06:33:54.859Z] [worker-~diagnostic~-cd2f90ff-536b-47b8-b804-ed6a724cbb6c]: Assigning socketPath: /tmp/fire_emu_23883.sock
+[debug] [2019-12-28T06:33:54.860Z] [worker-~diagnostic~-cd2f90ff-536b-47b8-b804-ed6a724cbb6c]: BUSY
+[debug] [2019-12-28T06:33:54.864Z] [worker-~diagnostic~-34c69af0-90ef-49ef-894e-165e51f6d9bb]: exited
+[debug] [2019-12-28T06:33:54.864Z] [worker-~diagnostic~-34c69af0-90ef-49ef-894e-165e51f6d9bb]: FINISHED
+[debug] [2019-12-28T06:33:55.038Z] [runtime-status] [23883] Functions runtime initialized. {"cwd":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions","node_version":"13.5.0"}
+[debug] [2019-12-28T06:33:55.039Z] [runtime-status] [23883] Disabled runtime features: undefined
+[debug] [2019-12-28T06:33:55.040Z] [runtime-status] [23883] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.0","resolution":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-12-28T06:33:55.042Z] [runtime-status] [23883] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-12-28T06:33:55.159Z] [runtime-status] [23883] Found google-gax at /home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/google-gax/build/src/index.js
+[debug] [2019-12-28T06:33:55.159Z] [runtime-status] [23883] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-28T06:33:55.183Z] [runtime-status] [23883] Checked functions.config() {"config":{}}
+[debug] [2019-12-28T06:33:55.184Z] [runtime-status] [23883] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-12-28T06:33:55.184Z] [runtime-status] [23883] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.0","resolution":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-12-28T06:33:55.185Z] [runtime-status] [23883] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-12-28T06:33:55.213Z] [runtime-status] [23883] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.9.0","resolution":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/firebase-admin/lib/index.js"}}
+[debug] [2019-12-28T06:33:55.214Z] [runtime-status] [23883] initializeApp(DEFAULT) {"databaseURL":"https://ecommerce-f9321.firebaseio.com","storageBucket":"ecommerce-f9321.appspot.com","projectId":"ecommerce-f9321"}
+[debug] [2019-12-28T06:33:55.297Z] [worker-~diagnostic~-cd2f90ff-536b-47b8-b804-ed6a724cbb6c]: IDLE
+[info] >  working on 8080
+[debug] [2019-12-28T06:33:58.306Z] File /home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/index.js changed, reloading triggers
+[debug] [2019-12-28T06:33:59.307Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2019-12-28T06:33:59.307Z] [worker-~diagnostic~-cd2f90ff-536b-47b8-b804-ed6a724cbb6c]: FINISHING
+[debug] [2019-12-28T06:33:59.308Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2019-12-28T06:33:59.317Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2019-12-28T06:33:59.318Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2019-12-28T06:33:59.318Z] [worker-pool] submitWork(triggerId=)
+[debug] [2019-12-28T06:33:59.318Z] [worker-~diagnostic~-6fb22174-5f01-4db3-98cd-80e29d2beb6c]: Assigning socketPath: /tmp/fire_emu_23950.sock
+[debug] [2019-12-28T06:33:59.318Z] [worker-~diagnostic~-6fb22174-5f01-4db3-98cd-80e29d2beb6c]: BUSY
+[debug] [2019-12-28T06:33:59.321Z] [worker-~diagnostic~-cd2f90ff-536b-47b8-b804-ed6a724cbb6c]: exited
+[debug] [2019-12-28T06:33:59.321Z] [worker-~diagnostic~-cd2f90ff-536b-47b8-b804-ed6a724cbb6c]: FINISHED
+[debug] [2019-12-28T06:33:59.475Z] [runtime-status] [23950] Functions runtime initialized. {"cwd":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions","node_version":"13.5.0"}
+[debug] [2019-12-28T06:33:59.476Z] [runtime-status] [23950] Disabled runtime features: undefined
+[debug] [2019-12-28T06:33:59.477Z] [runtime-status] [23950] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.0","resolution":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-12-28T06:33:59.478Z] [runtime-status] [23950] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-12-28T06:33:59.582Z] [runtime-status] [23950] Found google-gax at /home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/google-gax/build/src/index.js
+[debug] [2019-12-28T06:33:59.582Z] [runtime-status] [23950] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-28T06:33:59.603Z] [runtime-status] [23950] Checked functions.config() {"config":{}}
+[debug] [2019-12-28T06:33:59.604Z] [runtime-status] [23950] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-12-28T06:33:59.604Z] [runtime-status] [23950] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.0","resolution":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-12-28T06:33:59.605Z] [runtime-status] [23950] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-12-28T06:33:59.627Z] [runtime-status] [23950] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.9.0","resolution":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/firebase-admin/lib/index.js"}}
+[debug] [2019-12-28T06:33:59.628Z] [runtime-status] [23950] initializeApp(DEFAULT) {"databaseURL":"https://ecommerce-f9321.firebaseio.com","storageBucket":"ecommerce-f9321.appspot.com","projectId":"ecommerce-f9321"}
+[debug] [2019-12-28T06:33:59.698Z] [worker-~diagnostic~-6fb22174-5f01-4db3-98cd-80e29d2beb6c]: IDLE
+[info] >  working on 8080
+[debug] [2019-12-28T06:34:05.931Z] File /home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/index.js changed, reloading triggers
+[debug] [2019-12-28T06:34:06.932Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2019-12-28T06:34:06.932Z] [worker-~diagnostic~-6fb22174-5f01-4db3-98cd-80e29d2beb6c]: FINISHING
+[debug] [2019-12-28T06:34:06.933Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2019-12-28T06:34:06.944Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2019-12-28T06:34:06.945Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2019-12-28T06:34:06.945Z] [worker-pool] submitWork(triggerId=)
+[debug] [2019-12-28T06:34:06.945Z] [worker-~diagnostic~-9fc60b09-9101-4ddb-9863-4e44dc8c34d2]: Assigning socketPath: /tmp/fire_emu_23973.sock
+[debug] [2019-12-28T06:34:06.946Z] [worker-~diagnostic~-9fc60b09-9101-4ddb-9863-4e44dc8c34d2]: BUSY
+[debug] [2019-12-28T06:34:06.949Z] [worker-~diagnostic~-6fb22174-5f01-4db3-98cd-80e29d2beb6c]: exited
+[debug] [2019-12-28T06:34:06.949Z] [worker-~diagnostic~-6fb22174-5f01-4db3-98cd-80e29d2beb6c]: FINISHED
+[debug] [2019-12-28T06:34:07.127Z] [runtime-status] [23973] Functions runtime initialized. {"cwd":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions","node_version":"13.5.0"}
+[debug] [2019-12-28T06:34:07.128Z] [runtime-status] [23973] Disabled runtime features: undefined
+[debug] [2019-12-28T06:34:07.129Z] [runtime-status] [23973] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.0","resolution":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-12-28T06:34:07.130Z] [runtime-status] [23973] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-12-28T06:34:07.235Z] [runtime-status] [23973] Found google-gax at /home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/google-gax/build/src/index.js
+[debug] [2019-12-28T06:34:07.235Z] [runtime-status] [23973] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-28T06:34:07.257Z] [runtime-status] [23973] Checked functions.config() {"config":{}}
+[debug] [2019-12-28T06:34:07.258Z] [runtime-status] [23973] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-12-28T06:34:07.258Z] [runtime-status] [23973] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.0","resolution":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-12-28T06:34:07.258Z] [runtime-status] [23973] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-12-28T06:34:07.281Z] [runtime-status] [23973] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.9.0","resolution":"/home/aakash/Desktop/Dev projects/personal projects/ecommerce/functions/node_modules/firebase-admin/lib/index.js"}}
+[debug] [2019-12-28T06:34:07.283Z] [runtime-status] [23973] initializeApp(DEFAULT) {"databaseURL":"https://ecommerce-f9321.firebaseio.com","storageBucket":"ecommerce-f9321.appspot.com","projectId":"ecommerce-f9321"}
+[debug] [2019-12-28T06:34:07.353Z] [worker-~diagnostic~-9fc60b09-9101-4ddb-9863-4e44dc8c34d2]: IDLE
+[info] >  working on 8080
