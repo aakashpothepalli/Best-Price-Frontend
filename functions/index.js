@@ -5,33 +5,35 @@ admin.initializeApp();
 
 const express = require('express')
 const app = express()
+
+const body_parser = require('body-parser');
+
+// parse JSON (application/json content-type)
+app.use(body_parser.json());
+
+
 var port = 8080;
 
-let currentUsers={}
+// let currentUsers={}
 // admin
 //     .database()
 //     .ref('/')
 //     .set({
 //         "users" : {
-//           "-LvTUVpOSnRx1GXxgxJG" : {
-//             "age" : 18,
-//             "name" : "aakash"
-//           },
+      
 //           "-LvVQ3LEWsNsao4RXtmZ" : {
-//             "email" : "p.saiaakash518@gmail.com",
+//             "email" : "p.saiaakash517@gmail.com",
 //             "name" : "aakash",
+//             "cart":["football"],
 //             "pass" : "aakash"
 //           },
 //           "-LvW2dX3OIWmKVHcSPJ4" : {
 //             "email" : "arun@gmail.com",
 //             "name" : "arun",
-//             "pass" : "arun"
+//             "pass" : "arun",
+//             "cart" :["TV"],
 //           },
-//           "-Lvk6DaPypMdtsmUUSkt" : {
-//             "email" : "",
-//             "name" : "",
-//             "pass" : ""
-//           },
+          
 //           "-Lvpc24r_LvLGe_j4mUA" : {
 //             "email" : "p.rishika900@gmail.com",
 //             "name" : "rishika",
@@ -43,23 +45,42 @@ let currentUsers={}
 
 let dbref = admin.database().ref('users')
 
-app.get('/cart', (req, res) => {
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
+app.get('/cart', async (req, res) => {
     res.json({
-        products: ['gaming laptop \n', 'headphones\n', 'tablets\n']
+        products: await dbref.child(req.query.id).once('value').then(ds=>ds.val()['cart'])
     })
 
 })
-app.get('/navdata',(req,res)=>{
-
-    let username = dbref.child(currentUsers[req.query.id]).once('value').then(ds=>ds.val()['name'])
-    console.log(username)
-    res.json({
-        name:database[currentUsers[req.query.id]]
-    })
+app.post('/cart',async (req,res)=>{
+    let cart = await dbref.child(req.body.id).once('value').then(ds=>ds.val()['cart'])
+    cart.push(req.body.newItem)
+    dbref.child(req.body.id).child('cart').set(cart)
+    console.log(await dbref.child(req.body.id).once('value').then(ds=>ds.val()['cart']))
+    res.send('success')
 })
 
 app.get('/auth', (req, res) => {
     checkAuth(req.query.email, req.query.pass, res)
+})
+
+app.post('/signup',async (req,res)=>{
+    let key = dbref.push().key
+
+    let newUser = {}
+    newUser[key]= {
+      name:req.body.name,
+      email:req.body.email,
+      pass:req.body.pass
+    }
+    await dbref.update(newUser)
+    
+    res.send(`hi ${req.body.name}`)
 })
 
 const checkAuth = async (email, pass, res) => {
@@ -70,17 +91,17 @@ const checkAuth = async (email, pass, res) => {
     .catch(er => console.log(er));
 
     if(email && pass)
-    for (let el in database) {
-        if (database[el].email === email && database[el].pass === pass) {
+    for (let id in database) {
+        if (database[id].email === email && database[id].pass === pass) {
 
-            let uniqueId = Math.random().toString(36).substring(7);
+            // let uniqueId = Math.random().toString(36).substring(7);
             
-            currentUsers[uniqueId] =el
+            // currentUsers[uniqueId] =id
 
-            let userName = await dbref.child(currentUsers[uniqueId]).once('value').then(ds=>ds.val()['name'])
+            let userName = await dbref.child(id).once('value').then(ds=>ds.val()['name'])
             res.json({
                 username:userName,
-                id:uniqueId
+                id:id
             })
             return true
         }

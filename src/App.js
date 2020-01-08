@@ -3,7 +3,6 @@ import React from "react"
 import Home from "./Home"
 import Signup from "./components/Signup"
 import Login from "./components/Login"
-import Logsign from "./components/logsign"
 import Cart from "./Cart"
 function App() {
   const routeResult = useRoutes({

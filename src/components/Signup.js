@@ -1,18 +1,17 @@
 import React,{useState} from 'react';
-import firebase from "../firebase"
 import Navbar from "./Navbar"
+import Axios from 'axios'
+import {apiurl} from '../apiurl'
 function Login () {
     const [name,setName]  =useState('')
     const [email,setEmail]  =useState('')
     const [pass,setPass] = useState('')
 
     const submit=()=>{
-        
-        const pref=  firebase.database().ref('users').push()    
         const loginInfo = {'name':name,'email':email,'pass':pass}
-        
-        pref.set(loginInfo).then(e=>console.log(e))
-        window.open('/','_self')
+        Axios.post(`${apiurl}/signup`,{'name':name,'email':email,'pass':pass} ).then(res=>console.log(res.data))
+
+        // window.open('/','_self')
     }
 
     

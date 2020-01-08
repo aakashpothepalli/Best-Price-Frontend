@@ -1,7 +1,7 @@
-import React,{useEffect,useState,useContext} from 'react';
+import React from 'react';
 import {useCookies} from "react-cookie"
 import Navbar from "./components/Navbar"
-
+import LandingPage from "./components/LandingPage"
 function Home() {
 
     const [cookies, setCookie] = useCookies();
@@ -10,10 +10,8 @@ function Home() {
      if(!cookies.id ||cookies.id==='null' ){
         return(
           <div>
-            <div style={{display: 'flex', justifyContent:'center',alignItems:'center'}}>      
               <Navbar />
-            
-            </div>
+              <LandingPage isLoggedIn={false}/>
             not logged in
             
           </div>  
@@ -23,7 +21,7 @@ function Home() {
         return(
           <div>
              <Navbar />
-          Logged in
+          <LandingPage isLoggedIn={true}/>
             </div>
         )
      

@@ -1,24 +1,30 @@
-import React, {useContext} from "react"
+import React from "react"
 import Navbar from "./components/Navbar"
 import Axios from 'axios'
 import {useEffect} from "react"
 import { useState } from "react"
+import {useCookies} from "react-cookie"
 import {apiurl} from './apiurl'
 export default function Cart() {
 
-    
-    const [data,setData]= useState({products:[]})
 
-    useEffect(() => {
-        Axios.get(`${apiurl}/cart`).then(res=>setData(res.data))
-    })
+    const [cookies, setCookie] = useCookies();
+
+    const [listItems,setListItems]=useState([])
+
+    useEffect(()=>
+        Axios.get(`${apiurl}/cart`,{params:{id:cookies.id}}).then((res)=>{
+            console.log(res.data)
+            setListItems(res.data.products)
+        }),[])
+   
     
     return (
         <div>
             <Navbar/>
             <div className="display-4">
                 Mycart
-                {data.products.map(el=>el+'\n')}
+                {listItems.map(el=><div>{el}</div>)}
             </div>
         </div>
     )

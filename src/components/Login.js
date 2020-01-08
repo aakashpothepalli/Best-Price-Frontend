@@ -1,5 +1,4 @@
-import React, {useState,useContext} from 'react';
-import firebase from "../firebase"
+import React, {useState} from 'react';
 import {useCookies} from "react-cookie"
 import Navbar from "./Navbar"
 import Axios from 'axios'

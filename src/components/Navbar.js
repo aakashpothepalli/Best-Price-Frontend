@@ -1,8 +1,6 @@
-import React,{useContext} from 'react';
-import {LoginContext} from "../state managers/loginContext"
+import React from 'react';
 import {useCookies} from "react-cookie"
 import { useEffect } from 'react';
-import Axios from 'axios'
 import { useState } from 'react';
 function App(props) {
   const [cookies, setCookie] = useCookies();
@@ -16,7 +14,7 @@ function App(props) {
 
   useEffect(()=>{
     setUserName(cookies.username)
-  })
+  },[cookies.username])
 
   if(cookies.id && cookies.id !== 'null'){
     return(
@@ -26,8 +24,8 @@ function App(props) {
   
         <ul className="navbar-nav ml-auto">
 
-        <li className="nav-item active">   
-              <a class="nav-link" href="/cart">Hello {userName}</a>
+        <li className="nav-item mt-2">   
+              Hello {userName}
           </li>
 
           <li className="nav-item active">   
