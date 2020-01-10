@@ -12,12 +12,12 @@ const LandingPage = (props) => {
             <div className='display-4' style={{flex:1,display:'flex',}}>HI THERE</div>
 
             <div className=' card-columns'>
-            <Product name='Football'/>
-            <Product name='Gaming Laptop'/>
-            <Product name='PS4'/>
-            <Product name='TV'/>
-            <Product name='iPhone 11'/>
-            <Product name='MSRIT'/>
+            <Product key='a1' name='Football'/>
+            <Product key='a2' name='Gaming Laptop'/>
+            <Product key='a3' name='PS4'/>
+            <Product key='a4' name='TV'/>
+            <Product key='a5' name='iPhone 11'/>
+            <Product key='a6' name='MSRIT'/>
             </div>
         </div>
     );

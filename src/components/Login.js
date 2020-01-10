@@ -2,14 +2,16 @@ import React, {useState} from 'react';
 import {useCookies} from "react-cookie"
 import Navbar from "./Navbar"
 import Axios from 'axios'
-import {apiurl} from '../apiurl' 
+import {apiurl} from '../apiurl'
+import ClipLoader from "react-spinners/ClipLoader";
+
 function Login() {
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
     const [cookies, setCookie] = useCookies(['id']);
-
+    const [loadingIndicator, setLoadingIndicator] = useState(false)
     const submit = () => {
-
+        setLoadingIndicator(true)
         Axios
             .get(`${apiurl}/auth`, {
                 params: {
@@ -19,9 +21,10 @@ function Login() {
             })
             .then(res => {
                 console.log(res.data)
-                if (res.data ) {
+                setLoadingIndicator(false)
+                if (res.data) {
                     setCookie('id', res.data.id)
-                    setCookie('username',res.data.username)
+                    setCookie('username', res.data.username)
 
                     window.open('/', '_self')
                 } else 
@@ -33,6 +36,12 @@ function Login() {
     return (
         <div >
             <Navbar/>
+        
+            <ClipLoader size={150}
+            css={{position:'absolute',left:0,right:0,marginLeft:'auto',marginRight:'auto',zIndex:20,width:150}}
+                //size={"150px"} this also works
+                color={"blue"} loading={loadingIndicator}/>
+
             <div className="display-4 flex text-center">Login to your account</div>
             <div
                 style={{

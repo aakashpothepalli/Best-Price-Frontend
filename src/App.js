@@ -4,6 +4,11 @@ import Home from "./Home"
 import Signup from "./components/Signup"
 import Login from "./components/Login"
 import Cart from "./Cart"
+
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+toast.configure()
+
 function App() {
   const routeResult = useRoutes({
     "/": () => <Home />,
