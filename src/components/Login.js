@@ -4,7 +4,7 @@ import Navbar from "./Navbar"
 import Axios from 'axios'
 import {apiurl} from '../apiurl'
 import ClipLoader from "react-spinners/ClipLoader";
-
+import {toast} from "react-toastify"
 function Login() {
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
@@ -27,8 +27,8 @@ function Login() {
                     setCookie('username', res.data.username)
 
                     window.open('/', '_self')
-                } else 
-                    alert('incorrect username or password')
+                } else if(!res.data)
+                    toast.warn('incorrect username or password')
             })
 
     }
