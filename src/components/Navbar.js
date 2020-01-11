@@ -3,8 +3,9 @@ import {useCookies} from "react-cookie"
 import {useEffect} from 'react';
 import {useState} from 'react';
 import soc from "../socketIO"
-
+import {useHistory,Link} from "react-router-dom"
 function App(props) {
+    const history = useHistory()
     const [cookies, setCookie] = useCookies();
     const [userName, setUserName] = useState('')
     const [cartCount,setCartCount] =useState(0)
@@ -12,7 +13,7 @@ function App(props) {
         setCookie('id', null, {path: '/'})
         setCookie('username', null, {path: '/'})
 
-        window.open('/', '_self')
+        history.push('/')
     }
 
     useEffect(() => {
@@ -35,7 +36,7 @@ function App(props) {
         return (
             <div className="navbar navbar-expand bg-light w-100">
 
-                <a href="/" className="navbar-brand ">ECommerce</a>
+                <Link to="/" className="navbar-brand ">ECommerce</Link>
 
                 <ul className="navbar-nav ml-auto">
 
@@ -44,15 +45,15 @@ function App(props) {
                     </li>
 
                     <li className="nav-item active">
-                        <a class="nav-link" href="/cart">Cart</a>
+                        <Link class="nav-link" to="/cart">Cart</Link>
                     </li>
 
                     <li style={{marginLeft:-10,}}>
-                        <a class="nav-link" href="/cart">{cartCount}</a>
+                        <Link class="nav-link" to="/cart">{cartCount}</Link>
                     </li>
 
                     <li className="nav-item active">
-                        <a className="nav-link" href='/' onClick={signout}>Sign Out</a>
+                        <Link className="nav-link" to='/' onClick={signout}>Sign Out</Link>
                     </li>
                 </ul>
 
@@ -66,11 +67,11 @@ function App(props) {
 
                 <ul className="navbar-nav ml-auto">
                     <li className="nav-item active">
-                        <a class="nav-link" href="/login">Login
-                        </a>
+                        <Link class="nav-link" to="/login">Login
+                        </Link>
                     </li>
                     <li className="nav-item active">
-                        <a class="nav-link" href="/signup">Signup</a>
+                        <Link class="nav-link" to="/signup">Signup</Link>
                     </li>
 
                 </ul>
