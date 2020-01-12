@@ -3,7 +3,7 @@ import Navbar from "./Navbar"
 import Axios from 'axios'
 import {useCookies} from "react-cookie"
 import ClipLoader from "react-spinners/ClipLoader";
-
+import {useHistory} from "react-router-dom"
 import {apiurl} from '../apiurl'
 function Login() {
     const [name, setName] = useState('')
@@ -11,7 +11,7 @@ function Login() {
     const [pass, setPass] = useState('')
     const [cookies, setCookie] = useCookies();
     const [loadingIndicator, setLoadingIndicator] = useState(false)
-
+    const history = useHistory()
     const submit = async () => {
         setLoadingIndicator(true)
         const loginInfo = {
@@ -28,7 +28,7 @@ function Login() {
             .then(res => res.data)
         setCookie('id', res.id)
         setCookie('username', res.username)
-        window.open('/', '_self')
+       history.push('/')
 
     }
 

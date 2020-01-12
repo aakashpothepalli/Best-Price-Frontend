@@ -22,7 +22,6 @@ function App(props) {
 
     useEffect(()=>{
       if(cookies.id && cookies.id!=='null'){
-        console.log('asas')
       soc.emit('cartcount',cookies.id)
 
       soc.on('cartcount',res=>{

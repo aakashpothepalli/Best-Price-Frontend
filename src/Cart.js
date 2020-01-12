@@ -12,7 +12,7 @@ export default function Cart() {
 
     const [cookies, setCookie] = useCookies();
 
-    const [listItems, setListItems] = useState([])
+    const [listItems, setListItems] = useState([]) 
 
     useEffect(() => {
         if (cookies.id && cookies.id !== null) 
@@ -37,7 +37,8 @@ export default function Cart() {
         <div>
             <Navbar/>
             <div className="display-4">
-                Mycart {
+                Mycart 
+                {
                     listItems.map(el =>< div key = {
                         el
                     } > {

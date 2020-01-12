@@ -5,7 +5,9 @@ import Axios from 'axios'
 import {apiurl} from '../apiurl'
 import ClipLoader from "react-spinners/ClipLoader";
 import {toast} from "react-toastify"
+import {useHistory} from "react-router-dom"
 function Login() {
+    const history = useHistory()
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
     const [cookies, setCookie] = useCookies(['id']);
@@ -13,22 +15,21 @@ function Login() {
     const submit = () => {
         setLoadingIndicator(true)
         Axios
-            .get(`${apiurl}/auth`, {
+            .get(`${apiurl}/login`, {
                 params: {
                     email: email,
                     pass: pass
                 }
             })
             .then(res => {
-                console.log(res.data)
-                setLoadingIndicator(false)
                 if (res.data) {
                     setCookie('id', res.data.id)
                     setCookie('username', res.data.username)
-
-                    window.open('/', '_self')
-                } else if(!res.data)
+                    history.push('/')
+                } else if (!res.data) {
+                    setLoadingIndicator(false)
                     toast.warn('incorrect username or password')
+                }
             })
 
     }
@@ -36,9 +37,16 @@ function Login() {
     return (
         <div >
             <Navbar/>
-        
-            <ClipLoader size={150}
-            css={{position:'absolute',left:0,right:0,marginLeft:'auto',marginRight:'auto',zIndex:20,width:150}}
+
+            <ClipLoader size={150} css={{
+                    position: 'absolute',
+                    left: 0,
+                    right: 0,
+                    marginLeft: 'auto',
+                    marginRight: 'auto',
+                    zIndex: 20,
+                    width: 150
+                }}
                 //size={"150px"} this also works
                 color={"blue"} loading={loadingIndicator}/>
 

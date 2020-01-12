@@ -10,9 +10,8 @@ const Product = (props) => {
 
     const add2cart = () => {
         if (cookies.id && cookies.id !=='null') {
-            console.log('wwww')
             Axios
-                .post(`${apiurl}/cart`, {
+                .post(`${apiurl}/add2cart`, {
                     id: cookies.id,
                     newItem: props.name
                 })
