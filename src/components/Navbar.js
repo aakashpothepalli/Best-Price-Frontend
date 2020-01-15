@@ -1,14 +1,18 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import {useCookies} from "react-cookie"
 import {useEffect} from 'react';
 import {useState} from 'react';
-import soc from "../socketIO"
-import {useHistory,Link} from "react-router-dom"
+import Axios from "axios"
+import CartContext from "../state managers/CartContext"
+import {useHistory, Link} from "react-router-dom"
+import { apiurl } from '../apiurl';
 function App(props) {
     const history = useHistory()
     const [cookies, setCookie] = useCookies();
     const [userName, setUserName] = useState('')
-    const [cartCount,setCartCount] =useState(0)
+
+    const [cartData,setCartData] = useContext(CartContext)
+    
     const signout = () => {
         setCookie('id', null, {path: '/'})
         setCookie('username', null, {path: '/'})
@@ -20,38 +24,41 @@ function App(props) {
         setUserName(cookies.username)
     }, [cookies.username])
 
-    useEffect(()=>{
-      if(cookies.id && cookies.id!=='null'){
-      soc.emit('cartcount',cookies.id)
 
-      soc.on('cartcount',res=>{
-        setCartCount(res)
-      })
-    }
-
-    },[])
 
     if (cookies.id && cookies.id !== 'null') {
         return (
-            <div className="navbar navbar-expand bg-light w-100">
+            <div className="navbar sticky-top navbar-expand-md bg-light w-100">
 
-                <Link to="/" className="navbar-brand ">ECommerce</Link>
+                <Link to="/" className="navbar-brand col-md-6 ">ECommerce</Link>
 
-                <ul className="navbar-nav ml-auto">
+                <ul
+                    className="ml-md-auto  navbar-expand text-md-right  text-lg-right"
+                    style={{
+                        listStyleType: 'none',
+                        display: 'flex'
+                    }}>
 
-                    <li className="nav-item mt-2">
+                    <li
+                        className="nav-item"
+                        style={{
+                            marginTop: 8
+                        }}>
                         Hello {userName}
                     </li>
 
-                    <li className="nav-item active">
+                    <li className="nav-item ">
                         <Link class="nav-link" to="/cart">Cart</Link>
                     </li>
 
-                    <li style={{marginLeft:-10,}}>
-                        <Link class="nav-link" to="/cart">{cartCount}</Link>
+                    <li
+                        style={{
+                            marginLeft: -25
+                        }}>
+                        <Link class="nav-link" to="/cart">{cartData.length}</Link>
                     </li>
 
-                    <li className="nav-item active">
+                    <li className="nav-item ">
                         <Link className="nav-link" to='/' onClick={signout}>Sign Out</Link>
                     </li>
                 </ul>

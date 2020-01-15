@@ -9,7 +9,6 @@ const LandingPage = (props) => {
 
     return (
         <div>
-            <div className='display-4' style={{flex:1,display:'flex',}}>HI THERE</div>
 
             <div className=' card-columns'>
             <Product key='a1' name='Football'/>

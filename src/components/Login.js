@@ -25,7 +25,7 @@ function Login() {
                 if (res.data) {
                     setCookie('id', res.data.id)
                     setCookie('username', res.data.username)
-                    history.push('/')
+                    window.open('/','_self')
                 } else if (!res.data) {
                     setLoadingIndicator(false)
                     toast.warn('incorrect username or password')
@@ -38,14 +38,14 @@ function Login() {
         <div >
             <Navbar/>
 
-            <ClipLoader size={150} css={{
+            <ClipLoader size={100} css={{
                     position: 'absolute',
                     left: 0,
                     right: 0,
                     marginLeft: 'auto',
                     marginRight: 'auto',
                     zIndex: 20,
-                    width: 150
+                    width: 100
                 }}
                 //size={"150px"} this also works
                 color={"blue"} loading={loadingIndicator}/>

@@ -1,50 +1,21 @@
-import React from "react"
+import React, { useContext } from "react"
 import Navbar from "./components/Navbar"
-import Axios from 'axios'
-import {useEffect} from "react"
-import {useState} from "react"
-import {useCookies} from "react-cookie"
-import socketIOClient from "socket.io-client"
-import {apiurl} from './apiurl'
-import soc from "./socketIO"
 
+import CartContext from "./state managers/CartContext"
+import CartItem from "./components/CartItem"
 export default function Cart() {
 
-    const [cookies, setCookie] = useCookies();
-
-    const [listItems, setListItems] = useState([]) 
-
-    useEffect(() => {
-        if (cookies.id && cookies.id !== null) 
-            Axios
-                .get(`${apiurl}/cart`, {
-                    params: {
-                        id: cookies.id
-                    }
-                })
-                .then((res) => {
-                    console.log(res.data)
-                    setListItems(res.data.products)
-                })
-        }, [])
-
-    useEffect(() => {
-        soc.emit('cart','hi')
-        soc.on('cart', res => console.log(res))
-    }, [])
-
+    const cartData = useContext(CartContext)[0]
+ 
     return (
         <div>
             <Navbar/>
             <div className="display-4">
                 Mycart 
-                {
-                    listItems.map(el =>< div key = {
-                        el
-                    } > {
-                        el
-                    }</div>)
+              <div className="card-columns" style={{minWidth:'100px'}}>   {
+                    cartData.map(el =>< CartItem name = {el.name}/>)
                 }
+                </div>
             </div>
         </div>
     )

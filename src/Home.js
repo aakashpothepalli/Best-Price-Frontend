@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar"
 import LandingPage from "./components/LandingPage"
 function Home() {
 
-    const [cookies, setCookie] = useCookies();
+    const [cookies, ] = useCookies();
 
     
      if(!cookies.id ||cookies.id==='null' ){
